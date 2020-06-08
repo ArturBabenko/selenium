@@ -15,7 +15,9 @@ public class TestCase02_locators {
         safari.findElement(By.cssSelector("#go-to-public")).click();
         // check css in browser console $("#go-to-public")
         safari.get("https://www.w3schools.com/java/");
+        // //tagName[@attrib='value'] or //tagName[contains(@name,' value')] XPATH
+        // tagName[title*='Sign in'] or tagName#value CSS
         System.out.println(safari.findElement(By.cssSelector("#main > h2:nth-child(6)")).getText());
-        //safari.close();
+        safari.close();
     }
 }
