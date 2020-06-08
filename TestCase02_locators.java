@@ -12,8 +12,10 @@ public class TestCase02_locators {
         safari.findElement(By.id("addOverlay")).sendKeys("seleniumFirstTc");
         safari.findElement(By.xpath("//*[@id=\'go-to-public\']")).click();
         // check xpath in browser console $x("//*[@id=\'go-to-public\']")
-        //safari.findElement(By.cssSelector("#go-to-public")).click();
+        safari.findElement(By.cssSelector("#go-to-public")).click();
         // check css in browser console $("#go-to-public")
-        safari.close();
+        safari.get("https://www.w3schools.com/java/");
+        System.out.println(safari.findElement(By.cssSelector("#main > h2:nth-child(6)")).getText());
+        //safari.close();
     }
 }
