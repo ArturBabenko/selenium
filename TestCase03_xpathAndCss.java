@@ -15,6 +15,13 @@ public class TestCase03_xpathAndCss {
         chrome.findElement(By.xpath("//input[@name='login']")).sendKeys("XpathLogin");
         chrome.findElement(By.cssSelector("input#passwd")).sendKeys("password");
         chrome.findElement(By.xpath("//input[contains(@name, 'procee')]")).click();
+        //XPATH
+        // .//*[@id='some value']/folowwing-sibling::li[2] - sibling navigation
+        // .//*[@id='some value']/parent::ul  parent navigation
+        //*[text() = 'Text to find']
+
+        //CSS selector
+        //
 
     }
 }
