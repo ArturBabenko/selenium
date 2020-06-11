@@ -1,9 +1,6 @@
 package com.company;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -55,5 +52,19 @@ public class TestCase04_dropdowns {
         repeatTo.sendKeys(Keys.ARROW_DOWN);
         repeatTo.sendKeys(Keys.ENTER);
 
+        //Javascript in selenium
+
+        JavascriptExecutor js = (JavascriptExecutor) chrome;
+        String script = "return document.getElementById(\"some id\").value;";
+        String text = (String ) js.executeScript(script);
+        System.out.println(text);
+        int count = 0;
+        while (!text.equalsIgnoreCase("SOME TEXT") && count<5) {
+
+            chrome.findElement(By.id("123")).sendKeys(Keys.DOWN);
+            text = (String ) js.executeScript(script);
+            System.out.println(text);
+            count++;
+        }
     }
 }
